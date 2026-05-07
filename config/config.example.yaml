@@ -1,0 +1,29 @@
+# Workflow OS Configuration
+
+# Google Drive settings
+google_drive:
+  folder_id: "1oTfpoAddnGArr6M2bLojsYtRc7_Hd7QM"  # EOD folder
+  credentials_path: "config/google-credentials.json"
+  scopes:
+    - "https://www.googleapis.com/auth/drive.readonly"
+
+# FastAPI webhook
+webhook:
+  url: "http://localhost:8000/webhook/eod"
+  timeout: 30
+
+# Monitoring
+monitor:
+  check_interval_minutes: 15
+  state_file: "data/monitor_state.json"
+  
+# Logging
+logging:
+  level: "INFO"
+  file: "logs/workflow-os.log"
+  max_bytes: 10485760  # 10MB
+  backup_count: 5
+
+# Database
+database:
+  url: "sqlite:///data/workflow-os.db"
